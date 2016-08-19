@@ -20,6 +20,7 @@ RUN apt-get install -y less vim-tiny
 RUN apt-get install -y apg
 RUN apt-get install -y sudo
 RUN apt-get autoremove --purge -y
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Supervisor
 RUN mkdir -p /var/log/supervisor
