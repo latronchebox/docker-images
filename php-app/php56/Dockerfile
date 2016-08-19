@@ -19,6 +19,7 @@ RUN apt-get install -y git
 RUN apt-get install -y less vim-tiny
 RUN apt-get install -y apg
 RUN apt-get install -y sudo
+RUN apt-get autoremove --purge -y
 
 # Supervisor
 RUN mkdir -p /var/log/supervisor
