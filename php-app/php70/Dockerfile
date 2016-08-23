@@ -12,12 +12,16 @@ RUN apt-get install -y apt-utils
 RUN apt-get install -y supervisor
 RUN apt-get install -y apache2
 RUN apt-get install -y mysql-client-core-5.7
-RUN apt-get install -y php7.0 php7.0-curl php7.0-intl php7.0-mysql php-xdebug php-apcu php7.0-dev libapache2-mod-php7.0 php7.0-mbstring php7.0-zip
+RUN apt-get install -y memcached
+RUN apt-get install -y imagemagick
+RUN apt-get install -y php7.0 php7.0-curl php7.0-intl php7.0-mysql php-xdebug php-apcu php7.0-dev libapache2-mod-php7.0 php7.0-mbstring php7.0-zip php-imagick php7.0-mcrypt php-memcached php-memcache
 RUN apt-get install -y git
 RUN apt-get install -y less vim-tiny
 RUN apt-get install -y apg
 RUN apt-get install -y sudo
 RUN apt-get install -y unzip
+RUN apt-get autoremove --purge -y
+RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 # Supervisor
 RUN mkdir -p /var/log/supervisor

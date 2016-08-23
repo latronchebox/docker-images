@@ -2,7 +2,7 @@
 # symfony-app
 #
 
-FROM phpmentors/php-app:php70
+FROM latronchebox/php-app:php70
 MAINTAINER KUBO Atsuhiro <kubo@iteman.jp>
 
 RUN apt-get update
