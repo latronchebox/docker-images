@@ -6,7 +6,10 @@ FROM latronchebox/php-app:php70
 MAINTAINER KUBO Atsuhiro <kubo@iteman.jp>
 
 RUN apt-get update
-RUN apt-get install -y libfile-slurp-perl php7.0-sqlite3
+RUN apt-get install -y libfile-slurp-perl php7.0-sqlite3 nodejs 
+
+# NodeJS
+RUN npm install -g less
 
 # Apache2
 ENV APP_DOCUMENT_ROOT /var/app/web
