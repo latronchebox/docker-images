@@ -14,7 +14,7 @@ RUN apt-get install -y apache2
 RUN apt-get install -y mysql-client-core-5.6
 RUN apt-get install -y memcached
 RUN apt-get install -y imagemagick
-RUN apt-get install -y php5 php5-curl php5-intl php5-mysql php5-xdebug php5-apcu php5-dev php5-memcache php5-memcached php5-imagick
+RUN apt-get install -y php5 php5-curl php5-intl php5-mysql php5-xdebug php5-apcu php5-dev php5-memcache php5-memcached php5-imagick php5-gd
 RUN apt-get install -y git
 RUN apt-get install -y less vim-tiny
 RUN apt-get install -y apg
