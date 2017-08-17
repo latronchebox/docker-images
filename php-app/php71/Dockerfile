@@ -9,12 +9,17 @@ RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selectio
 RUN apt-get update
 RUN apt-get -y upgrade
 RUN apt-get install -y apt-utils
+RUN apt-get install -y locales curl software-properties-common python-software-properties git 
+RUN locale-gen en_US.UTF-8
+RUN LC_ALL=en_US.UTF-8 add-apt-repository ppa:ondrej/php
+RUN apt-get update
 RUN apt-get install -y supervisor
 RUN apt-get install -y apache2
 RUN apt-get install -y mysql-client-core-5.7
 RUN apt-get install -y memcached
 RUN apt-get install -y imagemagick
-RUN apt-get install -y php7.0 php7.0-curl php7.0-intl php7.0-mysql php-xdebug php-apcu php7.0-dev libapache2-mod-php7.0 php7.0-mbstring php7.0-zip php-imagick php-gd php7.0-mcrypt php-memcached php-memcache
+RUN apt-get install -y libapache2-mod-php7.1 php7.1-bcmath php7.1-bz2 php7.1-cli php7.1-common php7.1-curl php7.1-dba php7.1-gd php7.1-gmp php7.1-imap php7.1-intl php7.1-ldap php7.1-mbstring php7.1-mcrypt php7.1-mysql php7.1-odbc php7.1-pgsql php7.1-recode php7.1-snmp php7.1-soap php7.1-sqlite php7.1-tidy php7.1-xml php7.1-xmlrpc php7.1-xsl php7.1-zip
+RUN apt-get install -y php-gnupg php-imagick php-streams php-fxsl && \
 RUN apt-get install -y git
 RUN apt-get install -y less vim-tiny
 RUN apt-get install -y apg
@@ -42,8 +47,8 @@ RUN sed -i "s/^\\( *export \+LANG.*\\)/#\\1/" /etc/apache2/envvars
 # PHP7
 ENV PHP_INI ""
 ENV XDEBUG_REMOTE_PORT ""
-ADD php7/app.ini /etc/php/7.0/apache2/conf.d/90-app.ini
-ADD php7/app.ini /etc/php/7.0/cli/conf.d/90-app.ini
+ADD php7/app.ini /etc/php/7.1/apache2/conf.d/90-app.ini
+ADD php7/app.ini /etc/php/7.1/cli/conf.d/90-app.ini
 ADD php7/timezone.sh /usr/local/sbin/php7-timezone.sh
 
 # PHP application
