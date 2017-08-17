@@ -6,7 +6,7 @@ FROM latronchebox/php-app:php71
 MAINTAINER KUBO Atsuhiro <kubo@iteman.jp>
 
 RUN apt-get update
-RUN apt-get install -y libfile-slurp-perl php7.1-sqlite3 nodejs npm
+RUN apt-get install -y libfile-slurp-perl nodejs npm
 
 # Install Zsh
 RUN git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh \
