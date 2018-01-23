@@ -3,7 +3,7 @@
 #
 
 FROM ubuntu:16.04
-MAINTAINER KUBO Atsuhiro <kubo@iteman.jp>
+MAINTAINER Atsuhiro Kubo <kubo@iteman.jp>
 
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 RUN apt-get update
@@ -44,7 +44,7 @@ RUN chmod 755 /usr/local/sbin/apache2
 RUN a2enmod rewrite
 RUN sed -i "s/^\\( *export \+LANG.*\\)/#\\1/" /etc/apache2/envvars
 
-# PHP7
+# PHP
 ENV PHP_INI ""
 ENV XDEBUG_REMOTE_PORT ""
 ADD php7/app.ini /etc/php/7.1/apache2/conf.d/90-app.ini

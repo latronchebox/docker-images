@@ -1,7 +1,6 @@
 #
 # symfony-app
 #
-
 FROM latronchebox/php-app:php71
 MAINTAINER KUBO Atsuhiro <kubo@iteman.jp>
 
